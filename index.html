@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BOHEMIA RP | Český FiveM Roleplay</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGACE -->
+    <header class="navbar">
+
+    <div class="brand">
+        <img src="favicon.png.png" alt="Bohemia RP logo" class="brand-icon">
+
+        <div class="logo">
+            <span>BOHEMIA</span>
+            <small>ROLEPLAY</small>
+        </div>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+    <nav id="mainNav">
+        <a href="index.html">Domů</a>
+        <a href="index.html#about">O serveru</a>
+        <a href="index.html#jobs">Profese</a>
+        <a href="index.html#team">Tým</a>
+        <a href="pravidla.html">Pravidla</a>
+    </nav>
+
+    <a class="discord-button" href="#" onclick="openDiscord()">Discord</a>
+
+</header>
+
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <div class="online-badge">
+                <span class="online-dot"></span>
+                SERVER ONLINE
+            </div>
+        
+        <div class="hero-brand">
+
+    <h1>
+        BOHEMIA<br>
+        <span>ROLEPLAY</span>
+    </h1>
+
+    <img src="logo.png" alt="Bohemia RP logo" class="hero-logo">
+
+</div>
+
+            <p>
+                Tvůj příběh. Tvoje město. Tvoje pravidla.
+            </p>
+
+            <div class="hero-buttons">
+    <button class="secondary-button" onclick="openDiscord()">
+        DISCORD
+    </button>
+</div>
+
+        </div>
+
+        <div class="scroll-down">
+            ↓ Prozkoumat server
+        </div>
+
+    </section>
+
+
+    <!-- SERVER STATUS -->
+    <section class="status-section">
+
+        <div class="status-card">
+
+            <div>
+                <span class="status-label">STAV SERVERU</span>
+                <h2>
+                    <span class="online-dot"></span>
+                    ONLINE
+                </h2>
+            </div>
+
+            <div>
+                <span class="status-label">HRÁČI</span>
+                <h2 id="playerCount">42 / 128</h2>
+            </div>
+
+            <div>
+                <span class="status-label">SERVER</span>
+                <h2>BOHEMIA RP</h2>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- O SERVERU -->
+    <section id="about" class="section">
+
+        <div class="section-title">
+            <span>01</span>
+            <h2>O SERVERU</h2>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+    <h3>Vítej v Bohemia RP</h3>
+
+    <p>
+        Vstup do světa, kde každý hráč píše svůj vlastní příběh.
+        Začni od nuly, vybuduj si kariéru, poznej nové lidi
+        a rozhodni se, jakou cestou se vydáš.
+    </p>
+
+    <p>
+        Můžeš chránit ulice jako policista, zachraňovat životy,
+        rozjet vlastní podnikání nebo si jednoduše vytvořit život
+        podle svých představ.
+    </p>
+
+    <p>
+        Na Bohemia RP nejde jen o hraní – jde o příběhy,
+        situace a komunitu, která společně vytváří živý svět.
+        Každé rozhodnutí může ovlivnit, kam se tvůj příběh posune.
+    </p>
+</div>
+
+            <div class="about-box">
+                <div class="big-number">100%</div>
+                <span>ČESKÉ RP</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROFESSE -->
+    <section id="jobs" class="section dark-section">
+
+        <div class="section-title">
+            <span>02</span>
+            <h2>TVŮJ ŽIVOT</h2>
+        </div>
+
+        <div class="jobs-grid">
+
+            <div class="job-card">
+                <div class="job-icon">🚔</div>
+                <h3>POLICIE</h3>
+                <p>
+                    Chraň město, řeš případy a udržuj pořádek.
+                </p>
+            </div>
+
+            <div class="job-card">
+                <div class="job-icon">🚑</div>
+                <h3>ZÁCHRANNÁ SLUŽBA</h3>
+                <p>
+                    Zachraňuj životy a pomáhej občanům.
+                </p>
+            </div>
+
+            <div class="job-card">
+                <div class="job-icon">🔧</div>
+                <h3>MECHANIK</h3>
+                <p>
+                    Opravuj auta a vybuduj si vlastní kariéru.
+                </p>
+            </div>
+
+            <div class="job-card">
+                <div class="job-icon">💼</div>
+                <h3>PODNIKATEL</h3>
+                <p>
+                    Vytvoř firmu, vydělávej peníze a ovládni trh.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TÝM -->
+    <section id="team" class="section dark-section">
+
+        <div class="section-title">
+            <span>03</span>
+            <h2>NÁŠ TÝM</h2>
+        </div>
+
+        <div class="team-grid">
+
+            <div class="team-card">
+                <div class="avatar">👑</div>
+                <h3>MAJITEL</h3>
+                <p>★Ｋｕｂｉｚ★</p>
+                <p>𝓑𝓪𝓶𝓫𝓾𝓵𝓴𝓪</p>
+            </div>
+
+            <div class="team-card">
+                <div class="avatar">🛡️</div>
+                <h3>HLAVNÍ ADMIN</h3>
+                <p>Admin</p>
+            </div>
+
+            <div class="team-card">
+                <div class="avatar">🔨</div>
+                <h3>ADMIN TEAM</h3>
+                <p>Team</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="join-section">
+
+        <h2>VYTVOŘ SVŮJ PŘÍBĚH</h2>
+
+        <p>
+            Připoj se k Bohemia RP a začni hrát ještě dnes.
+        </p>
+
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            BOHEMIA RP
+        </div>
+
+        <p>
+            © 2026 Bohemia RP. Všechna práva vyhrazena.
+        </p>
+
+        <div class="footer-links">
+            <a href="#rules">Pravidla</a>
+            <a href="#" onclick="openDiscord()">Discord</a>
+        </div>
+
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Zpět nahoru">
+    ↑
+</button>
+   
+<script src="script.js"></script>
+
+</body>
+</html>

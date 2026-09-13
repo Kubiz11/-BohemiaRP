@@ -1,0 +1,850 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #090909;
+    color: white;
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(5, 5, 5, 0.92);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid #222;
+
+    z-index: 1000;
+    
+    transition: transform 0.3s ease;
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    font-weight: 900;
+}
+
+.logo span {
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.logo small {
+    color: #e52b32;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a,
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover,
+.footer-links a:hover {
+    color: #e52b32;
+}
+
+.discord-button {
+    text-decoration: none;
+    color: white;
+
+    padding: 12px 22px;
+
+    background: #e52b32;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.discord-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 10%;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.9)
+        ),
+        linear-gradient(
+            135deg,
+            #171717,
+            #080808
+        );
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.online-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    border: 1px solid #333;
+
+    padding: 8px 14px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.online-dot {
+    width: 9px;
+    height: 9px;
+
+    background: #36d66b;
+
+    border-radius: 50%;
+
+    display: inline-block;
+
+    box-shadow: 0 0 12px #36d66b;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 130px);
+    line-height: 0.85;
+
+    font-weight: 900;
+
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: #e52b32;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #aaa;
+
+    margin: 35px 0;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+.play-button,
+.red-button {
+    background: #e52b32;
+    color: white;
+
+    padding: 16px 28px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+.play-button:hover,
+.red-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(229,43,50,0.3);
+}
+
+.secondary-button {
+    background: transparent;
+    color: white;
+
+    border: 1px solid #555;
+
+    padding: 16px 28px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+.secondary-button:hover {
+    border-color: #e52b32;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 10%;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* STATUS */
+
+.status-section {
+    background: #111;
+
+    padding: 30px 10%;
+}
+
+.status-card {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    border: 1px solid #292929;
+
+    padding: 25px;
+}
+
+.status-label {
+    color: #666;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.status-card h2 {
+    margin-top: 8px;
+}
+
+
+/* SECTIONS */
+
+.section {
+    padding: 120px 10%;
+}
+
+.dark-section {
+    background: #0e0e0e;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 60px;
+}
+
+.section-title span {
+    color: #e52b32;
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-size: 40px;
+}
+
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    color: #999;
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.red-button {
+    margin-top: 15px;
+}
+
+.about-box {
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #333;
+
+    background: linear-gradient(135deg, #151515, #0a0a0a);
+}
+
+.big-number {
+    font-size: 90px;
+    font-weight: 900;
+    color: #e52b32;
+}
+
+
+/* JOBS */
+
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.job-card {
+    padding: 35px 25px;
+
+    border: 1px solid #292929;
+
+    background: #111;
+
+    transition: 0.3s;
+}
+
+.job-card:hover {
+    transform: translateY(-8px);
+    border-color: #e52b32;
+}
+
+.job-icon {
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.job-card h3 {
+    margin-bottom: 15px;
+}
+
+.job-card p {
+    color: #777;
+    line-height: 1.6;
+}
+
+
+/* RULES */
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.rule {
+    padding: 35px;
+
+    border-left: 3px solid #e52b32;
+
+    background: #111;
+}
+
+.rule strong {
+    font-size: 45px;
+    color: #333;
+}
+
+.rule h3 {
+    margin: 20px 0 10px;
+}
+
+.rule p {
+    color: #777;
+    line-height: 1.6;
+}
+
+
+/* TEAM */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.team-card {
+    text-align: center;
+
+    padding: 40px;
+
+    border: 1px solid #292929;
+
+    background: #111;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+
+    border-radius: 50%;
+
+    background: #1c1c1c;
+}
+
+.team-card p {
+    color: #777;
+    margin-top: 8px;
+}
+
+
+/* CTA */
+
+.join-section {
+    text-align: center;
+
+    padding: 130px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17090a,
+            #090909
+        );
+}
+
+.join-section h2 {
+    font-size: clamp(40px, 6vw, 80px);
+    margin-bottom: 20px;
+}
+
+.join-section p {
+    color: #888;
+    margin-bottom: 35px;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 50px 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #050505;
+
+    border-top: 1px solid #222;
+}
+
+.footer-logo {
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+footer p {
+    color: #555;
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+
+/* MOBIL */
+
+
+    .jobs-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rules-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .status-card {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 120px 7%;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 80px 7%;
+    }
+
+    .discord-button {
+        display: none;
+    }
+}
+
+.rules-map {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 25px 0 40px;
+    border-radius: 8px;
+    border: 1px solid #2b2b2b;
+}
+
+.rule-section {
+    margin-bottom: 35px;
+    padding: 35px;
+    background: #111;
+    border: 1px solid #292929;
+    border-left: 3px solid #e52b32;
+    border-radius: 6px;
+}
+
+.rule-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.rule-section h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.rule-section p {
+    color: #999;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.rule-section ul {
+    padding-left: 22px;
+}
+
+.rule-section li {
+    color: #aaa;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.rule-example {
+    background: #080808;
+    border: 1px solid #2a2a2a;
+    padding: 12px 15px;
+    margin: 10px 0 20px;
+    font-family: monospace;
+    color: #ddd;
+    border-radius: 4px;
+}
+
+.rules-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+    margin-top: 25px;
+    margin-bottom: 45px;
+}
+
+.rules-nav a {
+    color: #aaa;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 5px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.rules-nav a:hover {
+    color: white;
+    border-color: #e52b32;
+    background: #181818;
+}
+
+.rule-intro {
+    font-size: 16px;
+    color: #bbb !important;
+    margin-bottom: 25px !important;
+}
+
+#team {
+    background: #070707;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+    border: 1px solid #444;
+
+    background: rgba(15, 15, 15, 0.9);
+    color: white;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    z-index: 999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.back-to-top:hover {
+    background: #e52b32;
+    border-color: #e52b32;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-icon {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.hero-brand {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-logo {
+    width: 380px;
+    height: 380px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+@media (max-width: 900px) {
+
+    .navbar {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .brand-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .logo span {
+        font-size: 18px;
+    }
+
+    .logo small {
+        font-size: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .discord-button {
+        display: none;
+    }
+
+    nav {
+        position: fixed;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        background: #080808;
+
+        padding: 25px;
+
+        gap: 0;
+
+        transform: translateY(-150%);
+        opacity: 0;
+
+        transition: 0.3s ease;
+
+        border-bottom: 1px solid #222;
+    }
+
+    nav.open {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    nav a {
+        width: 100%;
+
+        padding: 18px 5px;
+
+        border-bottom: 1px solid #222;
+
+        font-size: 18px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 110px 20px 60px;
+    }
+
+    .hero-brand {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .hero-logo {
+        width: 160px;
+        height: 160px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .rules-page {
+        padding: 110px 20px 70px;
+    }
+
+    .rule-section {
+        padding: 22px;
+    }
+
+    .rules-map {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .jobs-grid,
+    .team-grid,
+    .rules-grid {
+        grid-template-columns: 1fr;
+    }
+}
