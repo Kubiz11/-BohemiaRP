@@ -9,18 +9,58 @@ function connectServer() {
     window.location.href = FIVEM_CONNECT;
 }
 
-function updatePlayerCount() {
+const STATUS_API = "https://bohemia-rp-status.jakubhajek11.workers.dev";
+
+async function updateServerStatus() {
     const playerCount = document.getElementById("playerCount");
+    const serverStatus = document.getElementById("serverStatus");
+    const serverStatusText = document.getElementById("serverStatusText");
 
-    if (!playerCount) return;
+    try {
+        const response = await fetch(STATUS_API, {
+            cache: "no-store"
+        });
 
-    const players = Math.floor(Math.random() * 20) + 35;
-    playerCount.textContent = players + " / 128";
+        if (!response.ok) {
+            throw new Error("API neodpovídá");
+        }
+
+        const data = await response.json();
+
+        if (data.online) {
+            // SERVER JE ONLINE
+            playerCount.textContent = `${data.players} / ${data.maxPlayers}`;
+            serverStatusText.textContent = "ONLINE";
+
+            serverStatus.classList.add("server-online");
+            serverStatus.classList.remove("server-offline");
+
+        } else {
+            // SERVER JE OFFLINE
+            playerCount.textContent = `0 / ${data.maxPlayers || 32}`;
+            serverStatusText.textContent = "OFFLINE";
+
+            serverStatus.classList.add("server-offline");
+            serverStatus.classList.remove("server-online");
+        }
+
+    } catch (error) {
+        // Když se nepodaří zjistit stav serveru
+        playerCount.textContent = "0 / 32";
+        serverStatusText.textContent = "OFFLINE";
+
+        serverStatus.classList.add("server-offline");
+        serverStatus.classList.remove("server-online");
+
+        console.error("Chyba při načítání FiveM serveru:", error);
+    }
 }
 
-setInterval(updatePlayerCount, 30000);
+// Spustí se hned
+updateServerStatus();
 
-updatePlayerCount();
+// Potom kontroluje server každých 30 sekund
+setInterval(updateServerStatus, 30000);
 
 let lastScrollY = window.scrollY;
 
